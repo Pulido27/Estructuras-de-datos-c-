@@ -2,21 +2,27 @@
 #include <list>
 using namespace std;
 
-const int MAX_SIZE = 5;
 
 class Fifolifo {
 	private:
-    	int data[MAX_SIZE];
+    	int* data = nullptr;
+    	int MAX_SIZE;
     	int front;
     	int rear;
     	int count;
 
 	public:
-    	Fifolifo() {
+    	Fifolifo(int size = 5) {
+    		MAX_SIZE = size;
+    		data = new int[MAX_SIZE];
         	front = MAX_SIZE-1;
         	rear = 0;
         	count = 0;
     	}
+    	
+    	~Fifolifo() {
+        	delete[] data;
+		}
 
     void push(int value) {
         if (count == MAX_SIZE) {
@@ -74,7 +80,7 @@ class Fifolifo {
 
 int main(){
 	
-	Fifolifo list1; 
+	Fifolifo list1(5); 
 	
 	//llenar el objeto con numeros 
 	list1.append(1);
