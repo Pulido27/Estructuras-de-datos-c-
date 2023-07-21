@@ -1,22 +1,28 @@
 #include <iostream>
 #include <list>
+
 using namespace std;
 
-const int MAX_SIZE = 5;
-
 class Fifolifo {
-	private:
-    	int data[MAX_SIZE];
-    	int front;
-    	int rear;
-    	int count;
+private:
+    int* data = nullptr;
+    int MAX_SIZE;
+    int front;
+    int rear;
+    int count;
 
-	public:
-    	Fifolifo() {
-        	front = MAX_SIZE-1;
-        	rear = 0;
-        	count = 0;
-    	}
+public:
+    Fifolifo(int size = 5) {
+        MAX_SIZE = size;
+        data = new int[MAX_SIZE];
+        front = MAX_SIZE - 1;
+        rear = 0;
+        count = 0;
+    }
+
+    ~Fifolifo() {
+        delete[] data;
+    }
 
     void push(int value) {
         if (count == MAX_SIZE) {
@@ -26,8 +32,7 @@ class Fifolifo {
 
         front = (front + 1) % MAX_SIZE;
         data[front] = value;
-		count++;
-        
+        count++;
     }
 
     void append(int value) {
@@ -48,7 +53,7 @@ class Fifolifo {
         }
 
         int value = data[front];
-        front = (front - 1 + MAX_SIZE ) % MAX_SIZE;
+        front = (front - 1 + MAX_SIZE) % MAX_SIZE;
         count--;
         return value;
     }
@@ -60,7 +65,7 @@ class Fifolifo {
         }
 
         int value = data[rear];
-        rear = (rear + 1 ) % MAX_SIZE;
+        rear = (rear + 1) % MAX_SIZE;
         count--;
         return value;
     }
@@ -68,31 +73,27 @@ class Fifolifo {
     int size() {
         return count;
     }
-
 };
 
+int main() {
 
-int main(){
-	
-	Fifolifo list1; 
-	
-	//llenar el objeto con numeros 
-	list1.append(1);
-	list1.append(2);
-	list1.append(3);
-	list1.append(4);
-	list1.append(5);
+    Fifolifo list1(5);
 
-	
-	//invertirlos
-	Fifolifo list2;
-	
-	while (list1.size() > 0) {
-  	list2.push(list1.pop_front());
-	}
-	
-	//ordenar la lista
+    // Llenar el objeto con números
+    list1.append(1);
+    list1.append(2);
+    list1.append(3);
+    list1.append(4);
+    list1.append(5);
 
+    // Invertirlos
+    Fifolifo list2;
+
+    while (list1.size() > 0) {
+        list2.push(list1.pop_front());
+    }
+
+    // Ordenar la lista
     while (list2.size() > 0) {
         int min = list2.pop_front();
         int size = list2.size();
@@ -115,8 +116,8 @@ int main(){
         cout << list1.pop_front() << " ";
     }
     cout << endl;
-	
-	 // Usando la biblioteca estándar (std::list)
+
+    // Usando la biblioteca estándar (std::list)
 
     // Guardar una lista de 10 números
     list<int> numbers;
@@ -145,7 +146,3 @@ int main(){
 
     return 0;
 }
-	
-	
-	
-
