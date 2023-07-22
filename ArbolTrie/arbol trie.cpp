@@ -102,7 +102,6 @@ private:
             }
         }
 
-        palabra.pop_back(); // Retroceder para eliminar la última letra al finalizar la recursión
     }
 
 public:
