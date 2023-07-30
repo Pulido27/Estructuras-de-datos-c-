@@ -67,7 +67,6 @@ private:
     }
 
     int _longitud (struct nodo* n, int x) {
-        bool flag = false;
 
         if (!n) {
             return false;
