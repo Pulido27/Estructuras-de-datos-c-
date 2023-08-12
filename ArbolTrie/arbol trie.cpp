@@ -67,7 +67,6 @@ private:
     }
 
     int _longitud (struct nodo* n, int x) {
-        bool flag = false;
 
         if (!n) {
             return false;
@@ -102,7 +101,6 @@ private:
             }
         }
 
-        palabra.pop_back(); // Retroceder para eliminar la última letra al finalizar la recursión
     }
 
 public:
