@@ -26,7 +26,7 @@ public:
 
     void push(int value) {
         if (count == MAX_SIZE) {
-            cout << "Error: La lista estÃ¡ llena." << endl;
+            cout << "Error: La lista está llena." << endl;
             return;
         }
 
@@ -37,7 +37,7 @@ public:
 
     void append(int value) {
         if (count == MAX_SIZE) {
-            cout << "Error: La lista estÃ¡ llena." << endl;
+            cout << "Error: La lista está llena." << endl;
             return;
         }
 
@@ -48,7 +48,7 @@ public:
 
     int pop_front() {
         if (count == 0) {
-            cout << "Error: La lista estÃ¡ vacÃ­a." << endl;
+            cout << "Error: La lista está vacía." << endl;
             return -1;
         }
 

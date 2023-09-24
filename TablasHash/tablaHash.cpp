@@ -1,32 +1,40 @@
 #include <iostream>
 #include <list>
 #include <functional>
+#include <vector>
 
 using namespace std;
 
-const int TAMANO_TABLA = 10;
-
+template <typename T>
 class TablaHash {
+public:
+	int TAMANO_TABLA;
+	
+	TablaHash(int size){
+		TAMANO_TABLA = size;
+		tabla.resize(TAMANO_TABLA);
+	}
+	
 private:
-    list<int> tabla[TAMANO_TABLA];
+    vector<list<T>> tabla;
 
-    // Función de hash que utiliza std::hash
+    // Funci�n de hash que utiliza std::hash
     //el tipo de dato size es un numero positivo que se adapta a la maquina 
     //normalmente usado para direccion de memoria o indices
-	size_t FuncionHash(int clave) {
-        hash<int> hashFunc;              // se crea un objeto tipo has recibe datos y devuelve el has
+	size_t FuncionHash(T clave) {
+        hash<T> hashFunc;              // se crea un objeto tipo has recibe datos y devuelve el has
         return hashFunc(clave) % TAMANO_TABLA; // modulo para asegurar que el indice sea valido
     }
 
 public:
-    // Método para agregar un valor a la tabla de hash
-    void agregar(int valor) {
+    // M�todo para agregar un valor a la tabla de hash
+    void agregar(T valor) {
         size_t indice = FuncionHash(valor);
         tabla[indice].push_back(valor); // push back porque trabajamos con listas enlazadas
     }
 
-    // Método para buscar un valor en la tabla de hash
-    bool buscar(int valor) {
+    // Metodo para buscar un valor en la tabla de hash
+    bool buscar(T valor) {
         size_t indice = FuncionHash(valor);
         //for each en el caso de que hubiera coliciones
         for (const auto& elemento : tabla[indice]) {
@@ -39,7 +47,7 @@ public:
 };
 
 int main() {
-    TablaHash tabla;
+    TablaHash<int> tabla(10);
 
     // Agregar algunos valores a la tabla
     tabla.agregar(5);
@@ -48,8 +56,8 @@ int main() {
 
     // Buscar valores en la tabla
     //uso de operador ternario en cout
-    cout << "¿5 se encuentra en la tabla? " << (tabla.buscar(5) ? "Sí" : "No") << std::endl;
-    cout << "¿8 se encuentra en la tabla? " << (tabla.buscar(8) ? "Sí" : "No") << std::endl;
+    cout << "EL valor 5 se encuentra en la tabla? " << (tabla.buscar(5) ? "Si" : "No") << std::endl;
+    cout << "EL valor  8se encuentra en la tabla? " << (tabla.buscar(8) ? "Si" : "No") << std::endl;
 
     return 0;
 }
