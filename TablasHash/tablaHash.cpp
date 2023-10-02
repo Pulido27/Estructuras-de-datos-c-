@@ -5,60 +5,52 @@
 
 using namespace std;
 
-template <typename T>
+template <typename T, typename R>
 class TablaHash {
 public:
-	int TAMANO_TABLA;
-	
-	TablaHash(int size){
-		TAMANO_TABLA = size;
-		tabla.resize(TAMANO_TABLA);
-	}
-	
-private:
-    vector<list<T>> tabla;
+    int TAMANO_TABLA;
 
-    // Función de hash que utiliza std::hash
-    //el tipo de dato size es un numero positivo que se adapta a la maquina 
-    //normalmente usado para direccion de memoria o indices
-	size_t FuncionHash(T clave) {
-        hash<T> hashFunc;              // se crea un objeto tipo has recibe datos y devuelve el has
-        return hashFunc(clave) % TAMANO_TABLA; // modulo para asegurar que el indice sea valido
+    TablaHash(int size) {
+        TAMANO_TABLA = size;
+        tabla.resize(TAMANO_TABLA);
+    }
+
+private:
+    vector<list<pair<T, R>>> tabla;
+
+    size_t FuncionHash(T clave) {
+        hash<T> hashFunc;
+        return hashFunc(clave) % TAMANO_TABLA;
     }
 
 public:
-    // Método para agregar un valor a la tabla de hash
-    void agregar(T valor) {
-        size_t indice = FuncionHash(valor);
-        tabla[indice].push_back(valor); // push back porque trabajamos con listas enlazadas
+    void agregar(T llave, R valor) {
+        size_t indice = FuncionHash(llave);
+        tabla[indice].emplace_back(llave, valor); // Almacenar la clave junto con el valor
     }
 
-    // Metodo para buscar un valor en la tabla de hash
-    bool buscar(T valor) {
-        size_t indice = FuncionHash(valor);
-        //for each en el caso de que hubiera coliciones
-        for (const auto& elemento : tabla[indice]) {
-            if (elemento == valor) {
-                return true; // Valor encontrado
+    // Buscar un valor en la tabla por su clave
+    bool buscar(T llave) {
+        size_t indice = FuncionHash(llave);
+        for (const auto& par : tabla[indice]) {
+            if (par.first == llave) {
+                cout << par.second;
+                return true;
             }
         }
-        return false; // Valor no encontrado
+        return false;
     }
 };
 
 int main() {
-    TablaHash<int> tabla(10);
-
-    // Agregar algunos valores a la tabla
-    tabla.agregar(5);
-    tabla.agregar(10);
-    tabla.agregar(15);
-
-    // Buscar valores en la tabla
-    //uso de operador ternario en cout
-    cout << "EL valor 5 se encuentra en la tabla? " << (tabla.buscar(5) ? "Si" : "No") << std::endl;
-    cout << "EL valor  8se encuentra en la tabla? " << (tabla.buscar(8) ? "Si" : "No") << std::endl;
-
-    return 0;
+	
+	TablaHash<string,int> tabla(10);
+	
+	tabla.agregar("cinco",5);
+	tabla.agregar("uni",1);	
+	tabla.agregar("dos",2);
+	
+	tabla.buscar("cinco");
+	tabla.buscar("tres");
+	return 0;	
 }
-
