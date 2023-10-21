@@ -3,45 +3,47 @@
 
 using namespace std;
 
+// Clase que combina una estructura fifo y lifo en un buffer circular
+
 class Fifolifo {
 private:
-    int* data = nullptr;
-    int MAX_SIZE;
-    int front;
-    int rear;
-    int count;
+    int* data = nullptr;     // apunta al arreglo dinámico que se crea
+    int max_size;            // le da el tamaño al arreglo dinámico
+    int front;               // apunta al inicio del buffer circular
+    int rear;                // apunta al final del buffer circular
+    int count;               // lleva el tamaño de la cola
 
 public:
-    Fifolifo(int size = 5) {
-        MAX_SIZE = size;
-        data = new int[MAX_SIZE];
-        front = MAX_SIZE - 1;
-        rear = 0;
+    Fifolifo(int size = 5) {        // se le agrega un tamaño por defecto
+        max_size = size;
+        data = new int[max_size];
+        front = max_size - 1;            // front apunta a la última posición del arreglo para el caso de que no se use push
+        rear = 0;                        // rear apunta a la primera posición del arreglo para el caso de que no se use append
         count = 0;
     }
 
     ~Fifolifo() {
-        delete[] data;
+        delete[] data;            // se elimina la memoria dinámica
     }
 
     void push(int value) {
-        if (count == MAX_SIZE) {
+        if (count == max_size) {
             cout << "Error: La lista está llena." << endl;
             return;
         }
 
-        front = (front + 1) % MAX_SIZE;
+        front = (front + 1) % max_size;            // se usa % para que si front = max_size se regrese a la posición 0;
         data[front] = value;
         count++;
     }
 
     void append(int value) {
-        if (count == MAX_SIZE) {
+        if (count == max_size) {
             cout << "Error: La lista está llena." << endl;
             return;
         }
 
-        rear = (rear - 1 + MAX_SIZE) % MAX_SIZE;
+        rear = (rear - 1 + max_size) % max_size;    // se usa % para que si rear = 0 se regrese a la posición max_size - 1;
         data[rear] = value;
         count++;
     }
@@ -53,19 +55,19 @@ public:
         }
 
         int value = data[front];
-        front = (front - 1 + MAX_SIZE) % MAX_SIZE;
+        front = (front - 1 + max_size) % max_size;
         count--;
         return value;
     }
 
     int pop_back() {
         if (count == 0) {
-            cout << "Error: La lista estÃ¡ vacÃ­a." << endl;
+            cout << "Error: La lista está vacía." << endl;
             return -1;
         }
 
         int value = data[rear];
-        rear = (rear + 1) % MAX_SIZE;
+        rear = (rear + 1) % max_size;
         count--;
         return value;
     }
@@ -79,7 +81,7 @@ int main() {
 
     Fifolifo list1(5);
 
-    // Llenar el objeto con nÃºmeros
+    // Llenar el objeto con números
     list1.append(1);
     list1.append(2);
     list1.append(3);
@@ -101,10 +103,10 @@ int main() {
         for (int i = 0; i < size; i++) {
             int num = list2.pop_front();
             if (num < min) {
-                list2.append(min);
+                list1.append(min);
                 min = num;
             } else {
-                list2.append(num);
+                list1.append(num);
             }
         }
 
@@ -117,9 +119,9 @@ int main() {
     }
     cout << endl;
 
-    // Usando la biblioteca estÃ¡ndar (std::list)
+    // Usando la biblioteca estándar (std::list)
 
-    // Guardar una lista de 10 nÃºmeros
+    // Guardar una lista de 10 números
     list<int> numbers;
     numbers.push_back(1);
     numbers.push_back(2);
@@ -146,3 +148,4 @@ int main() {
 
     return 0;
 }
+
