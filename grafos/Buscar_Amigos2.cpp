@@ -5,9 +5,9 @@
 #include <unordered_set>
 #include "Hashmap.h"
 
-using namespace std; 			 
+using namespace std;         
 
-class nodo{
+class nodo {
 public:
     string nombre;
     HashMap<string, nodo*> amigos;
@@ -17,7 +17,7 @@ public:
     }
 };
 
-class grafo{
+class grafo {
     
 public:
     nodo todos;
