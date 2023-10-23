@@ -25,17 +25,17 @@ private:
     }
 
 public:
-	
-	R& operator[](T key) {  //const T& key
-    	size_t index = FuncionHash(key);
-    	for (auto& pair : table[index]) {
-        	if (pair.first == key) {
-            	return pair.second;
-        	}
-    	}
-    	table[index].emplace_back(key, R{}); // Crear una nueva entrada si la clave no existe
-    	return table[index].back().second;
-	}
+    
+    R& operator[](T key) {  //const T& key
+        size_t index = FuncionHash(key);
+        for (auto& pair : table[index]) {
+            if (pair.first == key) {
+                return pair.second;
+            }
+        }
+        table[index].emplace_back(key, R{}); // Crear una nueva entrada si la clave no existe
+        return table[index].back().second;
+    }
     
     void push(pair<T, R> d) {                    // Push agrega un pair ya crado y emplace crea un pair nuevo 
         size_t index = FuncionHash(d.first);
@@ -59,7 +59,7 @@ public:
         table[index].emplace_back(key, value); // Almacenar la clave junto con el valor
     }
 
-    // Buscar un valor en la tabla por su clave y regresa el valor si  es que existe
+    // Buscar un valor en la tabla por su clave y regresa el valor si es que existe
     R& search(T key) {
         size_t index = FuncionHash(key);
         for (const auto& pair : table[index]) {
@@ -82,13 +82,14 @@ public:
         return 0;
     }
 
-	vector<pair<T, R>> list() {
-		vector<pair<T, R>> storage;
-		for (const auto& list2 : table) {
-			for (const auto pair : list2) {
-				storage.push_back(pair);
-			}
-		}
-		return storage;
-	}
+    vector<pair<T, R>> list() {
+        vector<pair<T, R>> storage;
+        for (const auto& list2 : table) {
+            for (const auto pair : list2) {
+                storage.push_back(pair);
+            }
+        }
+        return storage;
+    }
 };
+
