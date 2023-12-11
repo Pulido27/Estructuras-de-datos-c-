@@ -29,14 +29,15 @@ vector<tuple<int, int>> encontrarCaminoMasCorto(const vector<vector<int>>& cuadr
     queue<tuple<int, int>> cola;
     cola.push(inicio);
     distancias[get<0>(inicio)][get<1>(inicio)] = 0;
-
+	int flag = 0;
     while (!cola.empty()) {
         tuple<int, int> actual = cola.front();
         cola.pop();
-	
-	//	if(actual == final) {
-	//		break;
-	//	}
+		
+		if(actual == final) {
+			cout<< "final : "<<endl;
+			break;
+		}
 	
         for (const auto& direccion : direcciones) {
             int nuevaFila = get<0>(actual) + direccion.first;
@@ -64,7 +65,7 @@ vector<tuple<int, int>> encontrarCaminoMasCorto(const vector<vector<int>>& cuadr
     
     resultado.push_back(inicio);
     reverse(resultado.begin(), resultado.end());
-
+	//cout << "final : " << flag <<endl;
     return resultado;
 }
 
@@ -79,7 +80,7 @@ int main() {
     };
 
     tuple<int, int> inicio = make_tuple(5, 0);
-    tuple<int, int> final = make_tuple(5, 6);
+    tuple<int, int> final = make_tuple(3, 1);
 
     vector<tuple<int, int>> camino = encontrarCaminoMasCorto(cuadricula, inicio, final);
 
