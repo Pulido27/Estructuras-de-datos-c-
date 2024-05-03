@@ -1,4 +1,4 @@
-#include <iostream>
+}#include <iostream>
 
 using namespace std;
 
@@ -17,46 +17,46 @@ public:
 // Definicion de la clase ArbolBinarioBusqueda
 class ArbolBinarioBusqueda {
 private:
-    Nodo* raiz = nullptr;		// Se inicializa el nodo raiz
+    Nodo* raiz = nullptr;    // Se inicializa el nodo raiz
 
 public:
-    ArbolBinarioBusqueda() {	// Se hace el constructor 
+    ArbolBinarioBusqueda() {    // Se hace el constructor 
     }
-	
-	// Este es el metodo insertar
+    
+    // Este es el metodo insertar
     void insertar(int valor) {
-    	
-    	// Se revisa que la raiz no sea nula
+        
+        // Se revisa que la raiz no sea nula
         if (raiz == nullptr) {
             raiz = new Nodo(valor);
             return;
         }
 
-		// Se declara el Nodo actual en la raiz para poder navegar entre nodos
+        // Se declara el Nodo actual en la raiz para poder navegar entre nodos
         Nodo* nodoActual = raiz;
         
         
         //se inicia el ciclo para recorre el arbol
-		// Comienza el ciclo while en true para que se ejecute hasta que el if entre al return
-		while (true) {
+        // Comienza el ciclo while en true para que se ejecute hasta que el if entre al return
+        while (true) {
             /*
-			Se declara una referencia a un puntero tipo nodo(Nodo*&)			
-			
-			Para no solo apuntar a la misma direccion del otro puntero si no 
-			para literalmente convertirse en el otro puntero
-
-			Esto se hace para a la hora de agregarle un valor a ese puntero y no solo se cambie el del puntero copia si no
-            que se cambia el valor del puntero del nodo del arbol
-			
-			La referencia de puntero se le asigna uno de los hijos del nodoActual a traves del op ternario
-			 
-			La referencia a puntero se declara en el ciclo para que es te resetie su direccion 
-			y no solo se sobreescriba el valor 
-			*/
-			Nodo*& siguienteNodo = (valor < nodoActual->valor) ? nodoActual->izquierdo : nodoActual->derecho;
+            Se declara una referencia a un puntero tipo nodo(Nodo*&)            
             
-			//Se valida si el nodo esta disponible para poder colocar el valor nuevo ahi
-			if (siguienteNodo == nullptr) {
+            Para no solo apuntar a la misma direccion del otro puntero si no 
+            para literalmente convertirse en el otro puntero
+
+            Esto se hace para a la hora de agregarle un valor a ese puntero y no solo se cambie el del puntero copia si no
+            que se cambia el valor del puntero del nodo del arbol
+            
+            La referencia de puntero se le asigna uno de los hijos del nodoActual a traves del op ternario
+             
+            La referencia a puntero se declara en el ciclo para que es te resetie su direccion 
+            y no solo se sobreescriba el valor 
+            */
+            Nodo*& siguienteNodo = (valor < nodoActual->valor) ? nodoActual->izquierdo : nodoActual->derecho;
+            
+            //Se valida si el nodo esta disponible para poder colocar el valor nuevo ahi
+            if (siguienteNodo == nullptr) {
                 siguienteNodo = new Nodo(valor);
                 return;
             }
@@ -87,8 +87,8 @@ public:
     }
     
     void remove(int value) {
-    	
-	}
+        
+    }
 };
 
 // Ejemplo de uso
@@ -117,3 +117,4 @@ int main() {
 
     return 0;
 }
+
