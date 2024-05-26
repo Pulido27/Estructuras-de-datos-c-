@@ -7,8 +7,8 @@
 using namespace std;
 using namespace chrono;
 
-#define FILA 30000
-#define COLUMNA 30000
+#define FILA 10000
+#define COLUMNA 10000
 #define num_hilos 10
 
 mutex mtx;
@@ -19,7 +19,8 @@ void inicializar_matrix() {
     for(int i = 0; i < FILA; i++){
         matrix[i] = new uint64_t[COLUMNA];
         for(int j = 0; j < COLUMNA; j++) {
-            matrix[i][j] = j + i * COLUMNA; // Cambio en el orden de los índices	
+           // matrix[i][j] = j + i * COLUMNA; // Cambio en el orden de los índices	
+            matrix[i][j] = 1;
         }	
     }
 
@@ -103,7 +104,7 @@ int main() {
 	start = steady_clock::now();
     //for(int i = 0; i<100 ; i++){
         //cout<<"numero: " << i+1 << " "<<suma_thread()<<endl;
-        suma_thread();    
+     cout << suma_thread()<<endl;    
     //}
     stop = steady_clock::now();
     elapsed_normal = duration_cast<milliseconds>(stop - start);

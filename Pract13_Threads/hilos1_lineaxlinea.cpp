@@ -73,7 +73,3 @@ int main() {
 
 	return 0;
 }
-/*opciones
-1 hacerlo igual solo que ahora con 10 hilos
-
-*/

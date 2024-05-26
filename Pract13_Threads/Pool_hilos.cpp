@@ -9,8 +9,8 @@
 using namespace std;
 using namespace chrono;
 
-#define FILA 10000
-#define COLUMNA 10000
+#define FILA 1000
+#define COLUMNA 1000
 #define num_hilos 6
 #define pausas 10
 #define Kill_thread 4

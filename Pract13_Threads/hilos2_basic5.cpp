@@ -7,7 +7,7 @@ using namespace std;
 using namespace chrono;
 
 #define lado 10000
-#define hilos 10
+#define hilos 5
 
 int matrix[lado][lado];
 
@@ -74,7 +74,3 @@ int main() {
 
 	return 0;
 }
-/*opciones
-1 hacerlo igual solo que ahora con 10 hilos
-
-*/
