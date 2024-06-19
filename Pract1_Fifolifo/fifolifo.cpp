@@ -2,7 +2,7 @@
 #include <list>
 
 using namespace std;
-
+//12345
 // Clase que combina una estructura fifo y lifo en un buffer circular
 
 class Fifolifo {
