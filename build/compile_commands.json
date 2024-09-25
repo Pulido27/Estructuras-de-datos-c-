@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build",
+  "command": "/usr/bin/c++   -g -std=gnu++17 -o CMakeFiles/fifolifo.dir/Pract1_Fifolifo/fifolifo.cpp.o -c /home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract1_Fifolifo/fifolifo.cpp",
+  "file": "/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract1_Fifolifo/fifolifo.cpp",
+  "output": "CMakeFiles/fifolifo.dir/Pract1_Fifolifo/fifolifo.cpp.o"
+},
+{
+  "directory": "/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build",
+  "command": "/usr/bin/c++   -g -std=gnu++17 -o CMakeFiles/ArbolDeBusqueda.dir/Pract2_ArbolBusqueda/ArbolDeBusqueda.cpp.o -c /home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract2_ArbolBusqueda/ArbolDeBusqueda.cpp",
+  "file": "/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract2_ArbolBusqueda/ArbolDeBusqueda.cpp",
+  "output": "CMakeFiles/ArbolDeBusqueda.dir/Pract2_ArbolBusqueda/ArbolDeBusqueda.cpp.o"
+},
+{
+  "directory": "/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build",
+  "command": "/usr/bin/c++   -g -std=gnu++17 -o CMakeFiles/ArbolDeBusqueda2.dir/Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp.o -c /home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp",
+  "file": "/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp",
+  "output": "CMakeFiles/ArbolDeBusqueda2.dir/Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp.o"
+}
+]

@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/fifolifo.dir/Pract1_Fifolifo/fifolifo.cpp.o -o fifolifo 

@@ -1,23 +1,22 @@
 #include <iostream>
-#include <algorithm>
 #include <unordered_map> // Utilizamos unordered_map para almacenar los valores únicos
 //usa una tabla de has internamente
 using namespace std;
-//comentar lo de el doble hashmap
-bool valor_unico(int arreglo[], int n) {
-    unordered_map<int, int> frecuencias;
 
-    for (int i = 0; i < n; i++) {
-        if (frecuencias.count(arreglo[i]) == 1) {
-            frecuencias[arreglo[i]]++;
+// Funcion para buscar al menos un elemento unico
+bool unique_value(int arr[], int n) {
+    unordered_map<int, bool> frec;
+
+    for (int i = 0; i < n; i++) {         // se recorre al array se registran los duplicados
+        if (frec.count(arr[i]) == 1) {
+            frec[arr[i]] = false;
+
         } else {
-            frecuencias[arreglo[i]] = 1;
+            frec[arr[i]] = true;
         }
-    }
-    // se puede optimizar con otro arreglo o con un hashmap extra
-    // también modificando el array original;
+    }                                   //se recorre el map para ver si hay unicos
     for (int i = 0; i < n; i++) {
-        if (frecuencias[arreglo[i]] == 1) {
+        if (frec[arr[i]] == true) {
             return true;
         }
     }
@@ -26,13 +25,16 @@ bool valor_unico(int arreglo[], int n) {
 }
 
 int main() {
-    const int n = 10;
-    int arreglo[n] = {1, 3, 3, 1};
-    if (valor_unico(arreglo, n)) {
-        cout << "El arreglo contiene valores únicos.\n";
+    const int n = 4;
+    int arr[n] = {1, 3, 3, 1};
+    if (unique_value(arr, n)) {
+        cout << "El arr contiene valores únicos.\n";
     } else {
-        cout << "El arreglo contiene elementos duplicados.\n";
+        cout << "El arr contiene elementos duplicados.\n";
     }
 
     return 0;
+
+
+
 }

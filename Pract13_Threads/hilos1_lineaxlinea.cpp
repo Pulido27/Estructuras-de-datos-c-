@@ -8,7 +8,7 @@ using namespace chrono;
 
 #define lado 10000
 
-int matrix[lado][lado];
+ int matrix[lado][lado];
 
 void inicializar_matrix() {
 

@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "estructuras_de_datos",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ArbolDeBusqueda::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ArbolDeBusqueda-Debug-271d154ffd3eef036132.json",
+					"name" : "ArbolDeBusqueda",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ArbolDeBusqueda2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ArbolDeBusqueda2-Debug-dfc801134fee52c98507.json",
+					"name" : "ArbolDeBusqueda2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fifolifo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fifolifo-Debug-0674f76d4a760e60b9bb.json",
+					"name" : "fifolifo",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build",
+		"source" : "/home/ubuntu/Proyectos/Estructuras-de-datos-c-"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

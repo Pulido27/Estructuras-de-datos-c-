@@ -34,7 +34,7 @@ void unir(int a[], int n1, int b[], int n2) {
 
 int main() {
     
-    int vec[] = {3, 7, 0, 0, 0};
+    int vec[] = {1, 3, 5, 6, 7};
     int arr[] = {1, 5, 6};
     
     unir(vec, 2, arr, 3);
