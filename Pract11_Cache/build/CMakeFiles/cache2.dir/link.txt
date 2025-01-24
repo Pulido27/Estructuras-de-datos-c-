@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/cache2.dir/cache2.cpp.o -o cache2  -lgtest -lgtest_main 

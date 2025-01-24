@@ -54,7 +54,7 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/Proyectos/Estructuras-de-datos-c-
+CMAKE_SOURCE_DIR = /home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract14_B-tree
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/ubuntu/Proyectos/Estructuras-de-datos-c-/build
@@ -63,98 +63,85 @@ CMAKE_BINARY_DIR = /home/ubuntu/Proyectos/Estructuras-de-datos-c-/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/fifolifo.dir/all
-all: CMakeFiles/ArbolDeBusqueda.dir/all
-all: CMakeFiles/ArbolDeBusqueda2.dir/all
+all: CMakeFiles/b-tree.dir/all
+all: tests/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: tests/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/fifolifo.dir/clean
-clean: CMakeFiles/ArbolDeBusqueda.dir/clean
-clean: CMakeFiles/ArbolDeBusqueda2.dir/clean
+clean: CMakeFiles/b-tree.dir/clean
+clean: tests/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/fifolifo.dir
+# Directory level rules for directory tests
 
-# All Build rule for target.
-CMakeFiles/fifolifo.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fifolifo.dir/build.make CMakeFiles/fifolifo.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fifolifo.dir/build.make CMakeFiles/fifolifo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles --progress-num=5,6 "Built target fifolifo"
-.PHONY : CMakeFiles/fifolifo.dir/all
+# Recursive "all" directory target.
+tests/all: tests/CMakeFiles/test_b-tree.dir/all
+.PHONY : tests/all
 
-# Build rule for subdir invocation for target.
-CMakeFiles/fifolifo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/fifolifo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles 0
-.PHONY : CMakeFiles/fifolifo.dir/rule
+# Recursive "preinstall" directory target.
+tests/preinstall:
+.PHONY : tests/preinstall
 
-# Convenience name for target.
-fifolifo: CMakeFiles/fifolifo.dir/rule
-.PHONY : fifolifo
-
-# clean rule for target.
-CMakeFiles/fifolifo.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fifolifo.dir/build.make CMakeFiles/fifolifo.dir/clean
-.PHONY : CMakeFiles/fifolifo.dir/clean
+# Recursive "clean" directory target.
+tests/clean: tests/CMakeFiles/test_b-tree.dir/clean
+.PHONY : tests/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ArbolDeBusqueda.dir
+# Target rules for target CMakeFiles/b-tree.dir
 
 # All Build rule for target.
-CMakeFiles/ArbolDeBusqueda.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArbolDeBusqueda.dir/build.make CMakeFiles/ArbolDeBusqueda.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArbolDeBusqueda.dir/build.make CMakeFiles/ArbolDeBusqueda.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles --progress-num=1,2 "Built target ArbolDeBusqueda"
-.PHONY : CMakeFiles/ArbolDeBusqueda.dir/all
+CMakeFiles/b-tree.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/b-tree.dir/build.make CMakeFiles/b-tree.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/b-tree.dir/build.make CMakeFiles/b-tree.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles --progress-num=1,2 "Built target b-tree"
+.PHONY : CMakeFiles/b-tree.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ArbolDeBusqueda.dir/rule: cmake_check_build_system
+CMakeFiles/b-tree.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ArbolDeBusqueda.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/b-tree.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles 0
-.PHONY : CMakeFiles/ArbolDeBusqueda.dir/rule
+.PHONY : CMakeFiles/b-tree.dir/rule
 
 # Convenience name for target.
-ArbolDeBusqueda: CMakeFiles/ArbolDeBusqueda.dir/rule
-.PHONY : ArbolDeBusqueda
+b-tree: CMakeFiles/b-tree.dir/rule
+.PHONY : b-tree
 
 # clean rule for target.
-CMakeFiles/ArbolDeBusqueda.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArbolDeBusqueda.dir/build.make CMakeFiles/ArbolDeBusqueda.dir/clean
-.PHONY : CMakeFiles/ArbolDeBusqueda.dir/clean
+CMakeFiles/b-tree.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/b-tree.dir/build.make CMakeFiles/b-tree.dir/clean
+.PHONY : CMakeFiles/b-tree.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ArbolDeBusqueda2.dir
+# Target rules for target tests/CMakeFiles/test_b-tree.dir
 
 # All Build rule for target.
-CMakeFiles/ArbolDeBusqueda2.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArbolDeBusqueda2.dir/build.make CMakeFiles/ArbolDeBusqueda2.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArbolDeBusqueda2.dir/build.make CMakeFiles/ArbolDeBusqueda2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles --progress-num=3,4 "Built target ArbolDeBusqueda2"
-.PHONY : CMakeFiles/ArbolDeBusqueda2.dir/all
+tests/CMakeFiles/test_b-tree.dir/all:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_b-tree.dir/build.make tests/CMakeFiles/test_b-tree.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_b-tree.dir/build.make tests/CMakeFiles/test_b-tree.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles --progress-num=3,4 "Built target test_b-tree"
+.PHONY : tests/CMakeFiles/test_b-tree.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ArbolDeBusqueda2.dir/rule: cmake_check_build_system
+tests/CMakeFiles/test_b-tree.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ArbolDeBusqueda2.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_b-tree.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles 0
-.PHONY : CMakeFiles/ArbolDeBusqueda2.dir/rule
+.PHONY : tests/CMakeFiles/test_b-tree.dir/rule
 
 # Convenience name for target.
-ArbolDeBusqueda2: CMakeFiles/ArbolDeBusqueda2.dir/rule
-.PHONY : ArbolDeBusqueda2
+test_b-tree: tests/CMakeFiles/test_b-tree.dir/rule
+.PHONY : test_b-tree
 
 # clean rule for target.
-CMakeFiles/ArbolDeBusqueda2.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArbolDeBusqueda2.dir/build.make CMakeFiles/ArbolDeBusqueda2.dir/clean
-.PHONY : CMakeFiles/ArbolDeBusqueda2.dir/clean
+tests/CMakeFiles/test_b-tree.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_b-tree.dir/build.make tests/CMakeFiles/test_b-tree.dir/clean
+.PHONY : tests/CMakeFiles/test_b-tree.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

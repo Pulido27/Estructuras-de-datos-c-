@@ -1,0 +1,8 @@
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract14_B-tree/build/CMakeFiles/b-tree.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract14_B-tree/build/CMakeFiles/test.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract14_B-tree/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract14_B-tree/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract14_B-tree/build/tests/CMakeFiles/test_b-tree.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract14_B-tree/build/tests/CMakeFiles/test.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract14_B-tree/build/tests/CMakeFiles/edit_cache.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract14_B-tree/build/tests/CMakeFiles/rebuild_cache.dir

@@ -1,5 +1,8 @@
-/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles/fifolifo.dir
-/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles/ArbolDeBusqueda.dir
-/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles/ArbolDeBusqueda2.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles/b-tree.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles/test.dir
 /home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles/edit_cache.dir
 /home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/tests/CMakeFiles/test_b-tree.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/tests/CMakeFiles/test.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/tests/CMakeFiles/edit_cache.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/build/tests/CMakeFiles/rebuild_cache.dir

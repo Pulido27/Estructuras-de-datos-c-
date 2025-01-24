@@ -1,0 +1,8 @@
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract11_Cache/build/CMakeFiles/cache2.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract11_Cache/build/CMakeFiles/test.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract11_Cache/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract11_Cache/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract11_Cache/build/tests/CMakeFiles/test_cache2.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract11_Cache/build/tests/CMakeFiles/test.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract11_Cache/build/tests/CMakeFiles/edit_cache.dir
+/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract11_Cache/build/tests/CMakeFiles/rebuild_cache.dir

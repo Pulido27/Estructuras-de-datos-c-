@@ -1,0 +1,33 @@
+Start testing: Dec 27 19:07 UTC
+----------------------------------------------------------
+1/1 Testing: Testcache2
+1/1 Test: Testcache2
+Command: "/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract11_Cache/build/tests/test_cache2"
+Directory: /home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract11_Cache/build/tests
+"Testcache2" start time: Dec 27 19:07 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/ubuntu/googletest/googletest/googletest/src/gtest_main.cc
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from CacheMemoryTest
+[ RUN      ] CacheMemoryTest.ConstructorAndCapacity
+[       OK ] CacheMemoryTest.ConstructorAndCapacity (0 ms)
+[ RUN      ] CacheMemoryTest.PushAndGet
+[       OK ] CacheMemoryTest.PushAndGet (0 ms)
+[ RUN      ] CacheMemoryTest.Replacement
+[       OK ] CacheMemoryTest.Replacement (4000 ms)
+[----------] 3 tests from CacheMemoryTest (4000 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (4000 ms total)
+[  PASSED  ] 3 tests.
+<end of output>
+Test time =   4.00 sec
+----------------------------------------------------------
+Test Passed.
+"Testcache2" end time: Dec 27 19:07 UTC
+"Testcache2" time elapsed: 00:00:04
+----------------------------------------------------------
+
+End testing: Dec 27 19:07 UTC

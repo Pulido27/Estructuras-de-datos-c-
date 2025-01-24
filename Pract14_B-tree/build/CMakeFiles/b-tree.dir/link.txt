@@ -1,0 +1,1 @@
+/usr/bin/c++ "CMakeFiles/b-tree.dir/main.cpp.o" -o b-tree  -lgtest -lgtest_main 

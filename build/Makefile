@@ -57,13 +57,23 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/Proyectos/Estructuras-de-datos-c-
+CMAKE_SOURCE_DIR = /home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract14_B-tree
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/ubuntu/Proyectos/Estructuras-de-datos-c-/build
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -117,115 +127,54 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named fifolifo
+# Target rules for targets named b-tree
 
 # Build rule for target.
-fifolifo: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fifolifo
-.PHONY : fifolifo
+b-tree: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 b-tree
+.PHONY : b-tree
 
 # fast build rule for target.
-fifolifo/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fifolifo.dir/build.make CMakeFiles/fifolifo.dir/build
-.PHONY : fifolifo/fast
+b-tree/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/b-tree.dir/build.make CMakeFiles/b-tree.dir/build
+.PHONY : b-tree/fast
 
 #=============================================================================
-# Target rules for targets named ArbolDeBusqueda
+# Target rules for targets named test_b-tree
 
 # Build rule for target.
-ArbolDeBusqueda: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ArbolDeBusqueda
-.PHONY : ArbolDeBusqueda
+test_b-tree: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_b-tree
+.PHONY : test_b-tree
 
 # fast build rule for target.
-ArbolDeBusqueda/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArbolDeBusqueda.dir/build.make CMakeFiles/ArbolDeBusqueda.dir/build
-.PHONY : ArbolDeBusqueda/fast
+test_b-tree/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_b-tree.dir/build.make tests/CMakeFiles/test_b-tree.dir/build
+.PHONY : test_b-tree/fast
 
-#=============================================================================
-# Target rules for targets named ArbolDeBusqueda2
-
-# Build rule for target.
-ArbolDeBusqueda2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ArbolDeBusqueda2
-.PHONY : ArbolDeBusqueda2
-
-# fast build rule for target.
-ArbolDeBusqueda2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArbolDeBusqueda2.dir/build.make CMakeFiles/ArbolDeBusqueda2.dir/build
-.PHONY : ArbolDeBusqueda2/fast
-
-Pract1_Fifolifo/fifolifo.o: Pract1_Fifolifo/fifolifo.cpp.o
-.PHONY : Pract1_Fifolifo/fifolifo.o
+main.o: main.cpp.o
+.PHONY : main.o
 
 # target to build an object file
-Pract1_Fifolifo/fifolifo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fifolifo.dir/build.make CMakeFiles/fifolifo.dir/Pract1_Fifolifo/fifolifo.cpp.o
-.PHONY : Pract1_Fifolifo/fifolifo.cpp.o
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/b-tree.dir/build.make CMakeFiles/b-tree.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-Pract1_Fifolifo/fifolifo.i: Pract1_Fifolifo/fifolifo.cpp.i
-.PHONY : Pract1_Fifolifo/fifolifo.i
-
-# target to preprocess a source file
-Pract1_Fifolifo/fifolifo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fifolifo.dir/build.make CMakeFiles/fifolifo.dir/Pract1_Fifolifo/fifolifo.cpp.i
-.PHONY : Pract1_Fifolifo/fifolifo.cpp.i
-
-Pract1_Fifolifo/fifolifo.s: Pract1_Fifolifo/fifolifo.cpp.s
-.PHONY : Pract1_Fifolifo/fifolifo.s
-
-# target to generate assembly for a file
-Pract1_Fifolifo/fifolifo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fifolifo.dir/build.make CMakeFiles/fifolifo.dir/Pract1_Fifolifo/fifolifo.cpp.s
-.PHONY : Pract1_Fifolifo/fifolifo.cpp.s
-
-Pract2_ArbolBusqueda/ArbolDeBusqueda.o: Pract2_ArbolBusqueda/ArbolDeBusqueda.cpp.o
-.PHONY : Pract2_ArbolBusqueda/ArbolDeBusqueda.o
-
-# target to build an object file
-Pract2_ArbolBusqueda/ArbolDeBusqueda.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArbolDeBusqueda.dir/build.make CMakeFiles/ArbolDeBusqueda.dir/Pract2_ArbolBusqueda/ArbolDeBusqueda.cpp.o
-.PHONY : Pract2_ArbolBusqueda/ArbolDeBusqueda.cpp.o
-
-Pract2_ArbolBusqueda/ArbolDeBusqueda.i: Pract2_ArbolBusqueda/ArbolDeBusqueda.cpp.i
-.PHONY : Pract2_ArbolBusqueda/ArbolDeBusqueda.i
+main.i: main.cpp.i
+.PHONY : main.i
 
 # target to preprocess a source file
-Pract2_ArbolBusqueda/ArbolDeBusqueda.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArbolDeBusqueda.dir/build.make CMakeFiles/ArbolDeBusqueda.dir/Pract2_ArbolBusqueda/ArbolDeBusqueda.cpp.i
-.PHONY : Pract2_ArbolBusqueda/ArbolDeBusqueda.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/b-tree.dir/build.make CMakeFiles/b-tree.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-Pract2_ArbolBusqueda/ArbolDeBusqueda.s: Pract2_ArbolBusqueda/ArbolDeBusqueda.cpp.s
-.PHONY : Pract2_ArbolBusqueda/ArbolDeBusqueda.s
-
-# target to generate assembly for a file
-Pract2_ArbolBusqueda/ArbolDeBusqueda.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArbolDeBusqueda.dir/build.make CMakeFiles/ArbolDeBusqueda.dir/Pract2_ArbolBusqueda/ArbolDeBusqueda.cpp.s
-.PHONY : Pract2_ArbolBusqueda/ArbolDeBusqueda.cpp.s
-
-Pract2_ArbolBusqueda/ArbolDeBusqueda2.o: Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp.o
-.PHONY : Pract2_ArbolBusqueda/ArbolDeBusqueda2.o
-
-# target to build an object file
-Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArbolDeBusqueda2.dir/build.make CMakeFiles/ArbolDeBusqueda2.dir/Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp.o
-.PHONY : Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp.o
-
-Pract2_ArbolBusqueda/ArbolDeBusqueda2.i: Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp.i
-.PHONY : Pract2_ArbolBusqueda/ArbolDeBusqueda2.i
-
-# target to preprocess a source file
-Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArbolDeBusqueda2.dir/build.make CMakeFiles/ArbolDeBusqueda2.dir/Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp.i
-.PHONY : Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp.i
-
-Pract2_ArbolBusqueda/ArbolDeBusqueda2.s: Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp.s
-.PHONY : Pract2_ArbolBusqueda/ArbolDeBusqueda2.s
+main.s: main.cpp.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArbolDeBusqueda2.dir/build.make CMakeFiles/ArbolDeBusqueda2.dir/Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp.s
-.PHONY : Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/b-tree.dir/build.make CMakeFiles/b-tree.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -235,18 +184,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... ArbolDeBusqueda"
-	@echo "... ArbolDeBusqueda2"
-	@echo "... fifolifo"
-	@echo "... Pract1_Fifolifo/fifolifo.o"
-	@echo "... Pract1_Fifolifo/fifolifo.i"
-	@echo "... Pract1_Fifolifo/fifolifo.s"
-	@echo "... Pract2_ArbolBusqueda/ArbolDeBusqueda.o"
-	@echo "... Pract2_ArbolBusqueda/ArbolDeBusqueda.i"
-	@echo "... Pract2_ArbolBusqueda/ArbolDeBusqueda.s"
-	@echo "... Pract2_ArbolBusqueda/ArbolDeBusqueda2.o"
-	@echo "... Pract2_ArbolBusqueda/ArbolDeBusqueda2.i"
-	@echo "... Pract2_ArbolBusqueda/ArbolDeBusqueda2.s"
+	@echo "... test"
+	@echo "... b-tree"
+	@echo "... test_b-tree"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

@@ -1,0 +1,41 @@
+Start testing: Nov 21 03:25 UTC
+----------------------------------------------------------
+1/1 Testing: Testbtree
+1/1 Test: Testbtree
+Command: "/home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract14_B-tree/build/tests/test_b-tree"
+Directory: /home/ubuntu/Proyectos/Estructuras-de-datos-c-/Pract14_B-tree/build/tests
+"Testbtree" start time: Nov 21 03:25 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/ubuntu/googletest/googletest/googletest/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from BTreeTest
+[ RUN      ] BTreeTest.SearchNonExistentValue
+[       OK ] BTreeTest.SearchNonExistentValue (0 ms)
+[ RUN      ] BTreeTest.NodeSplitOnInsert
+[       OK ] BTreeTest.NodeSplitOnInsert (0 ms)
+[ RUN      ] BTreeTest.LevelBtree2
+[       OK ] BTreeTest.LevelBtree2 (0 ms)
+[ RUN      ] BTreeTest.LevelBtree3
+[       OK ] BTreeTest.LevelBtree3 (0 ms)
+[ RUN      ] BTreeTest.LevelBtree4
+[       OK ] BTreeTest.LevelBtree4 (0 ms)
+[ RUN      ] BTreeTest.LevelBtree5
+[       OK ] BTreeTest.LevelBtree5 (0 ms)
+[ RUN      ] BTreeTest.LevelBtree6
+[       OK ] BTreeTest.LevelBtree6 (1 ms)
+[----------] 7 tests from BTreeTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 7 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Testbtree" end time: Nov 21 03:25 UTC
+"Testbtree" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 21 03:25 UTC

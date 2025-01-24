@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/ArbolDeBusqueda2.dir/Pract2_ArbolBusqueda/ArbolDeBusqueda2.cpp.o -o ArbolDeBusqueda2 
