@@ -1,50 +1,69 @@
 #include <iostream>
-#include <unordered_set>
 #include <functional>
+#include <vector>
+#include <string>
+#include "bitset.h"
 
 using namespace std;
 
-struct llaves {
-    int a;
-    int b;
-    int c;
-
-    llaves(int a, int b, int c) :
-        a(a), b(b), c(c) {}
-};
-
 class bloomfilter {
 public:
-    unordered_set<bool> almacen; // 
+    Bitset data; 
+    int num_keys; 
     int tabla_size; // Agregado para calcular las llaves
 
-    bloomfilter(int size) : tabla_size(size) {}
-
-    llaves calcula_llaves(string txt) {
-        char sal = '1'; // Cambiado a comillas simples
-        int llave1 = hash<string>{}(txt + sal) % tabla_size;
-        int llave2 = llave1;
-        int llave3 = 0;
-
-        while (llave1 == llave2) {
-            sal++;
-            llave2 = hash<string>{}(txt + sal) % tabla_size;
-        }
-
-        llave3 = llave2;
-        while (llave1 == llave3 || llave2 == llave3) {
-            sal++;
-            llave3 = hash<string>{}(txt + sal) % tabla_size;
-        }
-
-        return { llave1, llave2, llave3 };
+    bloomfilter(int size, int keys) {
+        data.resize(size);
+        num_keys = keys;
+        tabla_size = size;
     }
 
+    vector<int> calculate_keys(string txt) {
+        vector<int> keys;
+        hash<string> hasher;
+        int key = 0;
+        string sal = "0";
+        int nsal = 0;
+
+        for(int i = 0; i < num_keys; i++) {
+            key = hasher(txt + sal) % tabla_size;
+
+            for(int j = 0; j < keys.size(); j++) {
+                while(keys[j] == key) {
+                    nsal++;
+                    sal = to_string(nsal);
+                    key = hasher(txt + sal) % tabla_size;
+                    j=0;
+                }
+            }
+            keys.push_back(key);
+        }
+
+        return keys;
+    }
+
+int encontrar_valor(const std::vector<int>& v, int valor) {
+    for (int i = 0; i < v.size(); ++i) {
+        if (v[i] == valor) {
+            return i;
+        }
+    }
+    return -1; // Valor no encontrado
+}
+
     void insert(string a) {
-        llaves llaves = calcula_llaves(a);
-        almacen.insert(llaves.a);
-        almacen.insert(llaves.b);
-        almacen.insert(llaves.c);
+        vector<int>keys = calculate_keys(a);
+
+        for(int i=0; i<1000; i++){
+            int x = encontrar_valor(keys,i);
+            if(x==-1){
+                cout<<"fallo";
+            }
+        }
+
+        for(int k : keys) {
+            data.set(k);
+        }
     }
 
     void agregar(string a) {
@@ -52,28 +71,43 @@ public:
     }
 
     bool buscar(string a) {
-        llaves llaves = calcula_llaves(a);
-        return almacen.count(llaves.a) && almacen.count(llaves.b) && almacen.count(llaves.c);
+        vector<int>keys = calculate_keys(a);
+
+        for(int k : keys) {
+            if(!data.test(k)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 };
 
+
 int main() {
-    bloomfilter filtro(100); // Proporciona el tamaño de la tabla
-    filtro.agregar("ejemplo1");
-    filtro.agregar("ejemplo2");
 
-    if (filtro.buscar("ejemplo1")) {
-        cout << "ejemplo1 está en el filtro." << endl;
-    } else {
-        cout << "ejemplo1 no está en el filtro." << endl;
-    }
+    bloomfilter bloom1(1000,1000);
 
-    if (filtro.buscar("ejemplo3")) {
-        cout << "ejemplo3 está en el filtro." << endl;
-    } else {
-        cout << "ejemplo3 no está en el filtro." << endl;
-    }
+    bloom1.agregar("pulido");
+
+
+    bloom1.agregar("cristian");
+
+    bloom1.agregar("daniel");
+
+    bloom1.agregar("carrillo");
+    bloom1.agregar("scar");
+    bloom1.agregar("as");
+
+
+    cout << bloom1.buscar("pulido");
+    cout << bloom1.buscar("cristian");
+    cout << bloom1.buscar("daniel");
+    cout << bloom1.buscar("carrillo");
+    cout << bloom1.buscar("scar");
+    cout << bloom1.buscar("as");
+    cout << bloom1.buscar("pulidu");
+    cout << bloom1.buscar("pu");
 
     return 0;
 }
-
